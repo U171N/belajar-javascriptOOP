@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polimorfisme-JAVASCRIPT</title>
+</head>
+<body>
+    <h1>Latihan OOP-Polimorfisme JavaScript</h1>
+</body>
+
+<script>
+    /*
+    Polimorfisme (Polymorphism): Polimorfisme mengacu pada kemampuan objek untuk mengambil banyak bentuk atau merespons dengan cara yang berbeda tergantung pada konteks. Dalam OOP, ini dapat dicapai melalui konsep seperti overloading (metode dengan nama yang sama tetapi parameter yang berbeda) dan overriding (mengganti metode yang ada dalam kelas induk di kelas anak).
+    */
+
+class Kendaraan{
+    //membuat methode function
+    jenis(){
+
+        console.log("Macam macam jenis kendaraan");
+    }
+}
+
+//membuat class pewarisan atau inheritance
+class Mobil extends Kendaraan{
+    jenis(){
+        console.log("Mobil");
+    }
+}
+
+class Motor extends Kendaraan{
+    jenis(){
+        console.log("Motor");
+    }
+}
+
+const kendaraan = [
+    new Mobil(),
+    new Motor()
+];
+
+//memanggil nilai dari methode yang ada di setiap class
+kendaraan.forEach(kendaraan =>{
+    kendaraan.jenis();
+})
+
+/*
+Dalam contoh di atas, kita memiliki dua kelas anak (Motor, Mobil) yang mewarisi dari kelas induk (Kendaraan). Setiap kelas anak memiliki implementasi yang berbeda untuk metode jenis() yang diwarisi dari kelas induk.
+
+Kelas Hewan adalah kelas induk yang memiliki metode jenis(). Namun, metode ini tidak memiliki implementasi yang spesifik, hanya mencetak pesan umum "Macam macam jenis kendaraan."
+
+Kelas anak (Motor, Mobil) mengganti (override) metode jenis() dari kelas induk Hewan dengan implementasi spesifik masing-masing.
+
+Kemudian, kita membuat sebuah array hewan yang berisi objek-objek dari kelas anak. Kemudian, kita menggunakan metode forEach() untuk memanggil metode jenis() pada setiap objek dalam array.
+*/
+</script>
+</html>

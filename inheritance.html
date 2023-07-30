@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan OOP-JAVASCRIPT</title>
+</head>
+<body>
+    <h1>Latihan OOP-JAVASCRIPT</h1>
+</body>
+<script>
+
+    /* 
+Pewarisan (Inheritance): Pewarisan memungkinkan kelas untuk mewarisi atribut dan metode dari kelas lain. Dengan pewarisan, Anda dapat membuat hierarki kelas di mana kelas anak mewarisi sifat kelas induk. Ini membantu dalam menghindari duplikasi kode dan memungkinkan untuk penggunaan kembali.
+    */
+    class Kendaraan{
+
+        //membuat constructor dimana didalamnya digunakan untuk memasukan sebuah attribute yang nantinya akan dipanggil dalam methode function di didalam class
+        constructor(merk,tahun){
+            this.merk = merk;
+            this.tahun = tahun;
+        }
+
+        //methode function pada javascript
+        info (){
+            console.log(`ini adalah ${this.merk} tahun ${this.tahun}`);
+        }
+    }
+
+    //membuat class turunan atau inheritance
+    class Mobile extends Kendaraan{
+        constructor(merk,tahun,jenis){
+            super(merk,tahun);
+            this.jenis = jenis;
+        }
+
+        //methode function pada javascript
+        drive(){
+            console.log(`${this.merk} sedang melaju`);
+        }
+    }
+
+    //memasukan nilai argument pada sebuah class
+    const mobil = new Mobile("Honda",2021,"SUV");
+
+    mobil.info(); //outputnya: Ini adalah Honda tahun 2021
+    mobil.drive(); //outputnya: Honda sedang melaju
+
+    /* penjelasan contoh diatas selengkapnya
+
+    Dalam contoh di atas, kita memiliki dua kelas: Kendaraan (Superclass) dan Mobil (Subclass). Kelas Mobil mewarisi Kendaraan, sehingga mendapatkan atribut dan metode dari kelas induknya.
+
+Kelas Kendaraan memiliki konstruktor yang menerima parameter merk dan tahun. Metode info() digunakan untuk mencetak informasi tentang kendaraan.
+
+Kelas Mobil adalah kelas anak yang mewarisi Kendaraan. Ia memiliki konstruktor tambahan yang menerima parameter jenis. Dalam konstruktor Mobil, kita menggunakan kata kunci super() untuk memanggil konstruktor dari kelas induk (Kendaraan) dan mengirimkan argumen yang diperlukan.
+
+Kelas Mobil juga memiliki metode khususnya sendiri, yaitu drive(), yang mencetak pesan tentang mobil yang sedang melaju.
+
+Pada akhirnya, kita membuat objek mobil dari kelas Mobil dan mengakses metode info() dan drive(). Anda akan melihat output sesuai dengan implementasi metode yang ada di kelas Mobil dan mewarisi metode info() dari kelas Kendaraan.
+    */
+
+
+
+</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan OOP-Javascript</title>
+</head>
+<body>
+    <h1>Protected Attribute-Javascript</h1>
+</body>
+
+<script>
+
+    //membuat parent class
+    class Vehicle {
+  constructor() {
+    this._speed = 0;
+  }
+
+  get speed() {
+    return this._speed;
+  }
+
+  set speed(value) {
+    this._speed = value;
+  }
+}
+
+class Car extends Vehicle {
+  constructor() {
+    super();
+    this._numberOfWheels = 4;
+  }
+
+  get numberOfWheels() {
+    return this._numberOfWheels;
+  }
+
+  set numberOfWheels(value) {
+    this._numberOfWheels = value;
+  }
+}
+
+const car = new Car();
+car.speed = 60; // Mengatur nilai atribut protected speed dari kelas induk
+console.log(car.speed); // Output: 60
+
+car.numberOfWheels = 3; // Mengatur nilai atribut protected numberOfWheels dari kelas anak
+console.log(car.numberOfWheels); // Output: 3
+
+
+/*
+PENJELASAN
+
+Dalam contoh di atas, kita memiliki kelas Vehicle dengan atribut _speed yang diberi hak akses protected. Atribut tersebut hanya dapat diakses oleh kelas itu sendiri dan kelas turunannya.
+
+Kelas Car adalah kelas turunan dari Vehicle dan memiliki atribut _numberOfWheels yang juga diberi hak akses protected.
+
+Dalam kode di atas, kita dapat mengakses dan mengatur nilai atribut speed dan numberOfWheels menggunakan metode getter dan setter yang didefinisikan dalam masing-masing kelas. Kita dapat melihat bahwa atribut speed dan numberOfWheels dapat diakses dan dimodifikasi melalui objek car yang merupakan instance dari kelas Car.
+
+Penting untuk diingat bahwa dalam JavaScript, hak akses protected hanyalah sebuah konvensi penamaan dan tidak memberikan pembatasan akses yang ketat. Namun, dengan mengikuti konvensi tersebut, kita dapat menyampaikan bahwa atribut seharusnya hanya diakses dari dalam kelas dan kelas turunannya.
+*/
+</script>
+</html>

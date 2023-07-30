@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan OOP - JAVASCRIPT</title>
+</head>
+<body>
+    <h1>Overriding - JAVASCRIPT</h1>
+</body>
+
+<script>
+    //membuat parent class
+    class Animal{
+
+        //methode function
+        makeSound(){
+            console.log("suara hewan");
+        }
+    }
+
+    //membuat class pewarisan atau inheritance
+    class Cat extends Animal{
+
+        //methode function
+        makeSound(){
+            console.log("Meow!");
+        }
+    }
+
+    //inheritance/atau class pewarisan
+
+    class Dog extends Animal{
+        makeSound(){
+            console.log("Gug-gug!");
+        }
+    }
+
+
+    //membuat inisiasi object terhadap class diatas
+    const animal = new Animal();
+    animal.makeSound();
+
+    const cat = new Cat();
+    cat.makeSound();
+
+    const dog = new Dog();
+    dog.makeSound();
+
+    /* PENJELASAN *
+
+    Dalam contoh di atas, kita memiliki kelas Animal sebagai kelas induk yang memiliki metode makeSound(). Kemudian kita mendefinisikan kelas Cat dan Dog sebagai kelas anak yang mewarisi dari kelas Animal.
+
+Di dalam kelas Cat dan Dog, kita mendefinisikan metode makeSound() yang sama seperti di kelas Animal, tetapi dengan implementasi yang berbeda. Inilah yang disebut sebagai overriding, di mana metode dari kelas induk digantikan oleh metode yang sama di kelas anak.
+
+Ketika kita membuat objek animal dan memanggil metode makeSound(), outputnya adalah "The animal makes a sound" karena kita menggunakan objek dari kelas Animal.
+
+Namun, ketika kita membuat objek cat dan dog, dan memanggil metode makeSound(), masing-masing objek akan memanggil metode yang telah di-override di kelas anak. Outputnya akan menjadi "Meow!" untuk objek cat dan "Woof!" untuk objek dog.
+
+Dengan konsep overriding, kita dapat mengganti perilaku metode dari kelas induk dengan implementasi yang sesuai di kelas anak. Ini memungkinkan kita untuk mengadaptasi dan memperluas fungsionalitas kelas, serta memberikan perilaku yang lebih khusus sesuai dengan jenis objek yang sedang kita buat.
+    */
+</script>
+</html>

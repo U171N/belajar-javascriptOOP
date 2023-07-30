@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan OOP-Javascript</title>
+</head>
+<body>
+    <h1>PrivateAttribute - Javascript</h1>
+</body>
+<script>
+
+    //membuat parent class
+    class Counter{
+
+        //private attribute
+        #count = 0;
+
+        #increment(){
+            this.#count++;
+        }
+        #decrement(){
+            this.#count--;
+        }
+
+        //membuat method function
+        getCount(){
+            return this.#count;
+        }
+
+        increment(){
+            this.#increment();
+        }
+
+        decrement(){
+            this.#decrement();
+        }
+    }
+
+
+    //membuat inisiasi sebuah object terhadap class
+    const counter =new Counter();
+    counter.increment();
+    counter.increment();
+    counter.decrement();
+    console.log(counter.getCount()); // Output: 1
+
+
+    /*
+    PENJELASAN
+
+Dalam contoh di atas, kita memiliki kelas Counter yang memiliki dua metode #increment() dan #decrement() yang diberi hak akses private menggunakan tanda pagar (#) sebelum nama metode. Kedua metode ini bertujuan untuk meningkatkan dan mengurangi nilai #count yang juga diberi hak akses private.
+
+Metode getCount() adalah metode public yang dapat diakses dari luar kelas dan digunakan untuk mengembalikan nilai #count.
+
+Metode increment() dan decrement() adalah metode public yang digunakan untuk memanggil metode #increment() dan #decrement() secara internal untuk mengubah nilai #count.
+
+Ketika kita membuat objek counter dari kelas Counter dan memanggil metode increment(), decrement(), dan getCount(), kita melihat output yang sesuai dengan logika dalam metode tersebut. Namun, karena metode #increment() dan #decrement() memiliki hak akses private, kita tidak dapat mengakses atau memanggil metode tersebut secara langsung dari luar kelas.
+
+Perhatikan bahwa dalam JavaScript, hak akses private hanya merupakan konvensi penamaan dan penggunaan tanda pagar (#). Namun, meskipun ada kemungkinan untuk mengakses metode yang dianggap private dari luar kelas jika dilakukan dengan sengaja, konvensi tersebut membantu untuk mengkomunikasikan bahwa metode tersebut seharusnya hanya digunakan secara internal oleh kelas itu sendiri.
+    */
+</script>
+</html>

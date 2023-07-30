@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan OOP-Javascript</title>
+</head>
+<body>
+    <h1>Method Function -  JavaScript</h1>
+</body>
+
+<script>
+    //membuat parent class
+    class Calculator{
+        add(a,b){ this
+        return a + b;
+    }
+}
+
+//membuat inisiasi object terhadap class diatas
+
+const calculator = new Calculator();
+
+const result =calculator.add(2,3);
+
+console.log(result);
+/*
+PENJELASAN
+
+Di contoh di atas, metode add() menerima dua argumen a dan b. Ketika memanggil metode add() dengan argumen 2 dan 3, hasilnya adalah 5.
+*/
+
+//Implementasi Return Value pada methode function
+
+class MathUtils {
+    square(number){
+        return number * number;
+    }
+}
+
+const mathUtils = new MathUtils();
+const squaredNumber = mathUtils.square(4);
+console.log(squaredNumber);
+
+/*
+PENJELASAN
+
+Di contoh di atas, metode square() mengembalikan nilai dari number * number. Ketika memanggil metode square() dengan argumen 4, hasilnya adalah 16.
+*/
+</script>
+</html>

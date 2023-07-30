@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan OOP JavaScript - public Attribute</title>
+</head>
+<body>
+    <h1>Latihan OOP JavaScript - public Attribute</h1>
+</body>
+
+<script>
+    //membuat class induk
+    class Person{
+        age;
+
+        //membuat constructor diamana didalm constructor akan ditaruh sebauh attirbute
+        //yang akan digunakan oleh methode function
+        constructor(){
+            this.age =30;
+        }
+
+        //memuat methode functions
+        getAge(){
+            return this.age;
+        }
+    }
+
+    //membuat inisiasi sebuah object terhadpa sebuah class
+
+    const person = new Person();
+    console.log(person.getAge());
+    console.log(person.age);
+</script>
+</html>

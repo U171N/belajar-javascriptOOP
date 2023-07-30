@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan OOP - JAVASCRIPT</title>
+</head>
+<body>
+    <h1>ENKAPSULASI - JAVASCRIPT</h1>
+</body>
+
+<script>
+    //membuat parent class
+
+    class Car{
+        constructor(make,model,year){
+            this._make = make;
+            this._model = model;
+            this._year = year;
+            this._engineStatus = "off";
+        }
+        //methode getter get properti make
+
+        get make(){
+            return this._make;
+        }
+
+        //methode getter get properti model
+
+        get model(){
+            return this._model;
+        }
+
+        //methode getter get properti year
+        get year(){
+            return this._year;
+        }
+
+        //membuat methode function
+
+         startEngine(){
+
+            this._engineStatus = "on";
+            console.log("Engine started");
+         }
+
+         //membuat methode function
+         stopEngine(){
+            this._engineStatus = "off";
+            console.log("Engine stopped");
+         }
+    }
+
+
+    //inisiasi object terhadap parent class
+    const myCar = new Car("Toyota","Corolla",2022); //menambahkan sebuah value atau argument
+    console.log(myCar.make);
+    console.log(myCar.model);
+    console.log(myCar.year);
+
+
+    //setter methode
+    myCar.startEngine();
+    myCar.stopEngine();
+
+    /* PENJELASAN
+
+    Dalam contoh di atas, kita memiliki kelas Car yang memiliki atribut _make, _model, _year, dan _engineStatus. Atribut tersebut diberi awalan _ untuk menunjukkan bahwa mereka merupakan atribut yang bersifat privat dan seharusnya tidak diakses langsung dari luar kelas.
+
+Untuk membaca nilai atribut yang bersifat privat, kita menggunakan metode get yang didefinisikan dengan nama yang sama seperti atribut tetapi tanpa awalan _ (misalnya, get make()). Metode ini memungkinkan kita untuk mengakses nilai atribut dengan cara yang terkendali dan melalui metode publik.
+
+Metode startEngine() dan stopEngine() adalah metode publik yang digunakan untuk mengubah nilai atribut _engineStatus menjadi "on" dan "off" secara berturut-turut.
+
+Ketika kita membuat objek myCar dari kelas Car dan mengakses metode get (misalnya, make()), kita dapat membaca nilai atribut yang bersifat privat dengan menggunakan metode tersebut.
+
+Perhatikan bahwa dalam JavaScript, hak akses privat tidak diterapkan secara ketat seperti dalam bahasa pemrograman lain. Namun, dengan menggunakan konvensi penamaan dan pendekatan ini, kita dapat mencapai tingkat enkapsulasi yang lebih tinggi dan membatasi akses langsung ke atribut yang bersifat privat dari luar kelas.
+    */
+</script>
+</html>
